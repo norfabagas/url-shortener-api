@@ -60,6 +60,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.1)
+    coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     dotenv (2.7.5)
@@ -93,6 +94,10 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
+    pry (0.13.0)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    public_suffix (4.0.3)
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
@@ -144,6 +149,9 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
+    validate_url (1.0.8)
+      activemodel (>= 3.0.0)
+      public_suffix
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -158,11 +166,13 @@ DEPENDENCIES
   dotenv-rails
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  pry
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  validate_url
 
 RUBY VERSION
    ruby 2.6.5p114

@@ -2,10 +2,19 @@ class Api::V1::ShortenersController < ApplicationController
   def menu
     if params[:get] == 'show_menu'
       response = {
-        :menu => "Coffee, latte, and Cappucino"
+        :menu => "Coffee, latte, and Cappuccino"
       }
-    else 
-      response = {}
+    elsif params[:get] == 'show_price'
+      case params[:for]
+      when 'Coffee'
+        response = 10
+      when 'Cappuccino'
+        response = 15
+      when 'Latte'
+        response = 12
+      else
+        response = 0
+      end
     end
 
     render :json  => response

@@ -2,7 +2,7 @@ class Api::V1::ShortenersController < ApplicationController
   def menu
     if params[:get] == 'show_menu'
       response = {
-        :menu => ['coffee', 'latte', 'cappucino']
+        :menu => "Coffee, latte, and Cappucino"
       }
     else 
       response = {}

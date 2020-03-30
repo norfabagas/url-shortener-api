@@ -5,15 +5,15 @@ class Api::V1::ShortenersController < ApplicationController
         :menu => "Coffee, latte, and Cappuccino"
       }
     elsif params[:get] == 'show_price'
-      case params[:for]
-      when 'Coffee'
-        response = {:price = 10}
-      when 'Cappuccino'
-        response = {:price = 15}
-      when 'Latte'
-        response = {:price = 12}
+      case params[:for].downcase
+      when 'coffee'
+        response = {:price => 10}
+      when 'cappuccino'
+        response = {:price => 15}
+      when 'latte'
+        response = {:price => 12}
       else
-        response = {:price = 0}
+        response = {:price => 0}
       end
     end
 

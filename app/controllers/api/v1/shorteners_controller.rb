@@ -1,12 +1,14 @@
 class Api::V1::ShortenersController < ApplicationController
   def menu
-    render :json  => {
-      "menu": [
-        "capucino",
-        "matcha",
-        "latte"
-      ]
-    }
+    if params[:get] == 'show_menu'
+      response = {
+        :menu => ['coffee', 'latte', 'cappucino']
+      }
+    else 
+      response = {}
+    end
+
+    render :json  => response
   end
   
   def index

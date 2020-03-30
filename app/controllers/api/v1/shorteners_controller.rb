@@ -7,13 +7,13 @@ class Api::V1::ShortenersController < ApplicationController
     elsif params[:get] == 'show_price'
       case params[:for]
       when 'Coffee'
-        response = 10
+        response = {:price = 10}
       when 'Cappuccino'
-        response = 15
+        response = {:price = 15}
       when 'Latte'
-        response = 12
+        response = {:price = 12}
       else
-        response = 0
+        response = {:price = 0}
       end
     end
 

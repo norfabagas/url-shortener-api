@@ -1,5 +1,18 @@
 class Api::V1::ShortenersController < ApplicationController
   def menu
+    # beverages price
+    coffee = 10
+    cappuccino = 15
+    latte =12
+
+    # count the quantity
+    if params[:quantity].nil?
+      quantity = 1
+    else
+      quantity = params[:quantity].to_i
+    end
+
+    # parameters query
     if params[:get] == 'show_menu'
       response = {
         :menu => "Coffee, latte, and Cappuccino"
@@ -7,11 +20,11 @@ class Api::V1::ShortenersController < ApplicationController
     elsif params[:get] == 'show_price'
       case params[:for].downcase
       when 'coffee'
-        response = {:price => 10}
+        response = {:price => coffee * quantity}
       when 'cappuccino'
-        response = {:price => 15}
+        response = {:price => cappuccino * quantity}
       when 'latte'
-        response = {:price => 12}
+        response = {:price => latte * quantity}
       else
         response = {:price => 0}
       end

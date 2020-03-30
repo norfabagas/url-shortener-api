@@ -1,4 +1,14 @@
 class Api::V1::ShortenersController < ApplicationController
+  def menu
+    render :json  => {
+      "menu": [
+        "capucino",
+        "matcha",
+        "latte"
+      ]
+    }
+  end
+  
   def index
     shorteners = []
 

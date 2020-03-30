@@ -20,11 +20,11 @@ class Api::V1::ShortenersController < ApplicationController
     elsif params[:get] == 'show_price'
       case params[:for].downcase
       when 'coffee'
-        response = {:price => coffee * quantity}
+        response = {:price => coffee * quantity, :quantity => quantity}
       when 'cappuccino'
-        response = {:price => cappuccino * quantity}
+        response = {:price => cappuccino * quantity, :quantity => quantity}
       when 'latte'
-        response = {:price => latte * quantity}
+        response = {:price => latte * quantity, :quantity => quantity}
       else
         response = {:price => 0}
       end
